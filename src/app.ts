@@ -64,16 +64,22 @@ class NCycle {
     this.wheels = wheels;
     this.status = status;
   }
-  printMethod(
+  start() {
+    this.status = "started";
+  }
+  stop() {
+    this.status = "stopped";
+  }
+  printMethod <Type>(
+    wheels:number,
     number: number = 0,
-    make: string | unknown[],
-    model: string | unknown[]
+    make: Type | Type[],
+    model: Type | Type[]
   ): void {
-    if (typeof make === typeof model)
+    if ((!Array.isArray(make) && !Array.isArray(model)))
       console.log(`This is ${make} & ${model} of NCycle.`);
     else {
-    
-      console.log(`This NCycle has a ${make} & ${model} at `);
+      console.log(`This NCycle has a ${make} & ${model} at make[${number}] & model[${number}]`);
     }
     console.log();
   }
@@ -81,3 +87,5 @@ class NCycle {
     console.log();
   }
 }
+
+

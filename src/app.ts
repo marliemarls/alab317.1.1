@@ -60,11 +60,12 @@ class NCycle {
     this.wheels = wheels;
     this.status = status;
 }
-printMethod(number:number = 0, make: string | unknown [], model: string | unknown []) : void{
-   if(typeof make !== String)
+printMethod(number:number = 0, make: string | unknown[], model: string | unknown []) : void{
+   console.log()
+}
+printAll() : void{
+    console.log()
 }
 }
 
-printAll() : void{
-    
-}
+

@@ -40,11 +40,11 @@ myBuick.wheels = myBuick.wheels - 1;
 console.log(myBuick.wheels);
 console.log(myBuick.model);
 class NCycle {
-    constructor(make, model, wheels, status) {
+    constructor(make, model, wheels, status = "started") {
+        this.status = "started";
         this.make = make;
         this.model = model;
         this.wheels = wheels;
-        this.status = status;
     }
     start() {
         this.status = "started";
@@ -52,7 +52,7 @@ class NCycle {
     stop() {
         this.status = "stopped";
     }
-    printMethod(wheels, number = 0, make, model) {
+    print(number = 0, make, model) {
         if ((!Array.isArray(make) && !Array.isArray(model)))
             console.log(`This is ${make} & ${model} of NCycle.`);
         else {
